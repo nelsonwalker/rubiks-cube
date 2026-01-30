@@ -42,3 +42,10 @@ cube.twist('RBDBBBUUULLBBDDBBBRRUUBBDDDBBBDUUUBUDBBBDDDRBRRRBBLLLBBBLRRRBRDBDDD.
 now watch the Rubik's cube get solved.
 
 ## Demo
+
+https://github.com/user-attachments/assets/94247a86-b2d7-425b-a995-a898e5c6eafa
+
+note that I skipped translating the state of the cube into a text file since it takes a while :)
+
+also note that I did `cube.twistDuration = 70` otherwise it takes forever
+
