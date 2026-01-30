@@ -59,7 +59,7 @@ bool top_cross_formed(cube_t *cube);
 void fluff1(cube_t *cube, int face);
 void fluff2(cube_t *cube, int face);
 void test_outputs(int num_testcases);
-void create_hotkey_script();
+void print_solution();
 
 void yellow();
 void white();

@@ -273,7 +273,6 @@ void rotate(cube_t *cube, int face_colour) {
         free(newedges[i]);
     }
     free(newedges);
-    printf("{");
     if (face_colour == YELLOW) {
         printf("B");
     }
@@ -292,7 +291,6 @@ void rotate(cube_t *cube, int face_colour) {
     else if (face_colour == RED) {
         printf("U");
     }
-    printf("}");
 }
 
 cell_t *make_cell_array(int num_cells) {
@@ -1408,10 +1406,29 @@ void solve_third_layer(cube_t *cube) {
 }
 
 
-// Creates a script output.ahk to solve a shuffled rubix cube at the site
-// http://iamthecu.be/
-void create_hotkey_script() {
-    printf("^;::\nSendInput, ");
+/*
+
+Outputs a set of moves to solve a shuffled rubix cube at the site
+http://iamthecu.be/
+
+NOTE:
+I have designed the output such that:
+- "B" means rotate the face with the yellow cube in the centre
+- "L" means rotate the face with the blue cube in the centre
+- "D" means rotate the face with the orange cube in the centre
+- "R" means rotate the face with the green cube in the centre
+- "U" means rotate the face with the red cube in the centre
+
+this means it doesn't matter what the orientation is of the cube,
+the move is the same. The letters are the letters used by the website.
+BUT it ONLY works when the cube is oriented such that the:
+- "front" face centre cube is white
+- "right" face centre cube is green
+- "up" face centre cube is red
+
+
+*/
+void print_solution() {
     cube_t *cube = make_new_cube();
 
     read_cube(cube);
@@ -1422,9 +1439,6 @@ void create_hotkey_script() {
     solve_third_layer(cube);
 
     free_cube(cube);
-
-    printf("\n");
-    printf("return");
 }
 
 // Good for testing and debugging

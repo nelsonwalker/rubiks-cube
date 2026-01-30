@@ -7,6 +7,6 @@
 int main(int argc, char *argv[]) {
     // uncomment option you want to execute 
 
-    create_hotkey_script();
+    print_solution();
     // test_outputs(14);
 }
